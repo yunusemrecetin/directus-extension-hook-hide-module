@@ -23,6 +23,7 @@ export default ({ filter, action }, { services }) => {
         { type: "module", id: "companies", enabled: false },
         { type: "module", id: "Companies", enabled: false },
         { type: "module", id: "content/Companies", enabled: false },
+        { type: "module", id: "HomePage", enabled: false },
         { type: "module", id: "files", enabled: true },
       ];
     }
