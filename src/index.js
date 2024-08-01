@@ -21,6 +21,7 @@ export default ({ filter, action }, { services }) => {
       settings.module_bar = [
         { type: "module", id: "content", enabled: true },
         { type: "module", id: "companies", enabled: false },
+        { type: "module", id: "Companies", enabled: false },
         { type: "module", id: "files", enabled: true },
       ];
     }
