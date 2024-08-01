@@ -24,6 +24,7 @@ export default ({ filter, action }, { services }) => {
         { type: "module", id: "Companies", enabled: false },
         { type: "module", id: "content/Companies", enabled: false },
         { type: "module", id: "HomePage", enabled: false },
+        { type: "module", id: "homepage", enabled: false },
         { type: "module", id: "files", enabled: true },
       ];
     }
