@@ -16,9 +16,9 @@ export default ({ filter, action }, { services }) => {
       moderatorRole.includes(context.accountability.role)
     ) {
       // Only display the defined modules for non-admin & non-moderator roles
-      console.log(items);
+      console.dir(items);
       var settings = items[0];
-      console.log(settings);
+      console.dir(settings);
       settings.module_bar = [
         { type: "module", id: "content", enabled: true },
         { type: "module", id: "companies", enabled: false },
