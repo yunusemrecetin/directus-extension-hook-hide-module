@@ -7,7 +7,7 @@ export default ({ filter, action }, { services }) => {
       accountability: context.accountability,
     });
     const moderatorRole = await rolesService.getKeysByQuery({
-      filter: { name: { _eq: "Satış Noktası yöneticisi" } },
+      filter: { name: { _eq: "Administrator" } },
     });
 
     if (
