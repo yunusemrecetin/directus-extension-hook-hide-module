@@ -19,15 +19,8 @@ export default ({ filter, action }, { services }) => {
       console.dir(items);
       var settings = items[0];
       console.dir(settings);
-      settings.module_bar = [
-        { type: "module", id: "content", enabled: true },
-        { type: "module", id: "companies", enabled: false },
-        { type: "module", id: "Companies", enabled: false },
-        { type: "module", id: "content/Companies", enabled: false },
-        { type: "module", id: "HomePage", enabled: false },
-        { type: "module", id: "homepage", enabled: false },
-        { type: "module", id: "files", enabled: true },
-      ];
+      settings.custom_css =
+        "#navigation > div.resize-wrapper.transition > div.module-nav.alt-colors > div.module-nav-content > div > ul > li:nth-child(1) { display: none !important;}";
     }
     return items;
   });
