@@ -19,8 +19,9 @@ export default ({ filter, action }, { services }) => {
       var settings = items[0];
       settings.module_bar = [
         { type: "module", id: "Companies", enabled: false },
-        { type: "module", id: "content/Companies", enabled: false },
-        { type: "module", id: "files", enabled: false },
+        { type: "module", id: "content", enabled: false },
+        { type: "module", id: "entries", enabled: true },
+        { type: "module", id: "files", enabled: true },
       ];
     }
     return items;
