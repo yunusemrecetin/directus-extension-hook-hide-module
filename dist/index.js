@@ -1,4 +1,4 @@
-export default ({ filter, action }, { logger, services }) => {
+export default ({ filter, action }, { services }) => {
   const { RolesService } = services;
 
   filter("settings.read", async (items, meta, context) => {
@@ -17,7 +17,7 @@ export default ({ filter, action }, { logger, services }) => {
     ) {
       // Only display the defined modules for non-admin & non-moderator roles
       var settings = items[0];
-      logger.log(settings);
+      console.log(settings);
       settings.module_bar = [
         { type: "module", id: "content", enabled: true },
         { type: "module", id: "companies", enabled: false },
