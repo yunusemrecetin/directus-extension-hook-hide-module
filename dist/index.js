@@ -4,7 +4,7 @@ module.exports = function registerHook({ filter }) {
     if (context.accountability && !context.accountability.admin) {
       // Only display the content module for non-admin roles
       var settings = items[0];
-      settings.module_bar = [{"type":"module","id":"content","enabled":false}];
+      settings.module_bar = [{"type":"module","id":"content","enabled":true}];
     }
     return items;
   });
