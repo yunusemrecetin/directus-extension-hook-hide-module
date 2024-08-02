@@ -24,6 +24,8 @@
 		"link": "directus-extension link"
 	},
 	"devDependencies": {
-		"@directus/extensions-sdk": "11.0.8"
+		"@directus/extensions-sdk": "11.0.8",
+		"@vue/compiler-sfc": "^3.4.35",
+		"vue-loader": "^17.4.2"
 	}
 }
