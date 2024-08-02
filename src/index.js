@@ -21,6 +21,7 @@ export default ({ filter, action }, { services }) => {
     settings.custom_css = ".nav > li:nth-child(1) { display: none !important;}";
 
     if (checkPermission == true) {
+      settings.custom_css = "";
       // Only display the defined modules for non-admin & non-moderator roles
     }
 
