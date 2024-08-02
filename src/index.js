@@ -1,28 +1,19 @@
-export default ({ filter, action }, { services }) => {
-  const { RolesService } = services;
+import { ref } from 'vue';
+import LayoutComponent from './layout.vue';
 
-  filter("settings.read", async (items, meta, context) => {
-    const rolesService = new RolesService({
-      schema: context.schema,
-      accountability: context.accountability,
-    });
+export default {
+	id: 'custom',
+	name: 'Custom',
+	icon: 'box',
+	component: LayoutComponent,
+	slots: {
+		options: () => null,
+		sidebar: () => null,
+		actions: () => null,
+	},
+	setup() {
+		const name = ref('Custom Layout');
 
-    var checkPermission =
-      context.accountability && context.accountability.admin;
-
-    console.dir(`check permission : ${checkPermission}`);
-
-    var settings = items[0];
-
-    console.dir("you are here");
-
-    if (checkPermission == false) {
-      settings.custom_css =
-        'a[href="/admin/content/CampaignEntries/+"] { display: none !important; } #sidebar > div > div.v-item-group.sidebar-detail-group > div:nth-child(5) > div > div > div.fields > div:nth-child(1) { display: none !important; }';
-    }
-
-    console.dir(items);
-
-    return items;
-  });
+		return { name };
+	},
 };
