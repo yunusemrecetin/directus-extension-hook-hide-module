@@ -14,6 +14,9 @@ export default ({ filter, action }, { services }) => {
 
     if (context.accountability) {
       console.dir(context.accountability.role);
+      console.dir(
+        `is match ${moderatorRole[0].includes(context.accountability.role)}`
+      );
     }
 
     if (
@@ -25,7 +28,7 @@ export default ({ filter, action }, { services }) => {
       var settings = items[0];
       console.dir(settings);
       settings.custom_css =
-        ".content-navigation > li:nth-child(1) { display: none !important;}";
+        ".content-navigation > li:nth-child(1) { visibility: gone !important;}";
       console.dir(items[0]);
 
       console.dir(items.length);
