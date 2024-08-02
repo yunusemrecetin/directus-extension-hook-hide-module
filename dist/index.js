@@ -11,12 +11,12 @@ export default ({ filter, action }, { services }) => {
       accountability: context.accountability,
     });
 
-    await delay(1000);
-
     var checkPermission =
       context.accountability && context.accountability.admin;
 
     console.dir(`check permission : ${checkPermission}`);
+
+    await delay(1000);
 
     var settings = items[0];
 
