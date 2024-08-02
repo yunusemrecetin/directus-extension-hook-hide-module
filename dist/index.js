@@ -13,7 +13,7 @@ export default ({ filter, action }, { services }) => {
       var settings = items[0];
       console.dir(settings);
       settings.custom_css =
-        '.content-navigation > li:nth-child(1) { display: none !important;}';
+        ".content-navigation > li:nth-child(1) { display: none !important;}";
       console.dir(items[0]);
 
       console.dir(items.length);
