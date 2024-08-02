@@ -14,6 +14,9 @@ export default ({ filter, action }, { services }) => {
 
     if (context.accountability) {
       console.dir(context.accountability.role);
+      console.dir(
+        `is match ${moderatorRole[0].includes(context.accountability.role)}`
+      );
     }
 
     if (
