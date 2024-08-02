@@ -10,7 +10,10 @@ export default ({ filter, action }, { services }) => {
       filter: { name: { _eq: "Satış Noktası yöneticisi" } },
     });
 
-    if (moderatorRole.includes(context.accountability.role)) {
+    if (
+      context.accountability &&
+      moderatorRole.includes(context.accountability.role)
+    ) {
       // Only display the defined modules for non-admin & non-moderator roles
       console.dir(items);
       var settings = items[0];
