@@ -10,18 +10,22 @@ export default ({ filter, action }, { services }) => {
       filter: { name: { _eq: "Satış Noktası yöneticisi" } },
     });
 
+    console.dir(context);
+
     var checkPermission =
       context.accountability &&
       moderatorRole.includes(context.accountability.role);
 
     console.dir(`check permission : ${checkPermission}`);
 
-    if (checkPermission) {
+    if (checkPermission == true) {
       // Only display the defined modules for non-admin & non-moderator roles
       var settings = items[0];
 
+      console.dir("you are here");
+
       settings.custom_css =
-        ".content-navigation > li:nth-child(1) { display: none !important;}";
+        ".nav > li:nth-child(1) { display: none !important;}";
     }
 
     console.dir(items);
