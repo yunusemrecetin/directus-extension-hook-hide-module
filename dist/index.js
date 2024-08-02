@@ -1,12 +1,5 @@
 export default ({ filter, action }, { services }) => {
-  const { RolesService } = services;
-
   filter("settings.read", async (items, meta, context) => {
-    const rolesService = new RolesService({
-      schema: context.schema,
-      accountability: context.accountability,
-    });
-
     if (context.accountability && !context.accountability.admin) {
       // Only display the defined modules for non-admin & non-moderator roles
       console.dir(items);
