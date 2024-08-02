@@ -1,29 +1,31 @@
-import Interface from '@directus/extensions-sdk/Interface';
-import { ref, onMounted } from 'vue';
+export default ({ filter, action }, { services }) => {
+  const { RolesService } = services;
 
-export default Interface({
-  id: 'hide-companies',
-  name: 'Hide Companies',
-  icon: 'eye-slash',
-  description: 'Hides the Companies collection for non-admin users',
-  component: {
-    template: `<div v-if="!isHidden"><slot /></div>`,
-    setup() {
-      const { getUser } = useAuth();
-      const isHidden = ref(false);
+  filter("settings.read", async (items, meta, context) => {
+    const rolesService = new RolesService({
+      schema: context.schema,
+      accountability: context.accountability,
+    });
 
-      onMounted(async () => {
-        const user = await getUser();
-        const userRole = user.role;
+    console.dir(context);
 
-        if (userRole !== 'admin') {
-          isHidden.value = true;
-        }
-      });
+    var checkPermission =
+      context.accountability && context.accountability.admin;
 
-      return {
-        isHidden,
-      };
-    },
-  },
-});
+    console.dir(`check permission : ${checkPermission}`);
+
+    var settings = items[0];
+
+    console.dir("you are here");
+
+    settings.custom_css = ".nav > li:nth-child(1) { display: none !important;}";
+
+    if (checkPermission == true) {
+      // Only display the defined modules for non-admin & non-moderator roles
+    }
+
+    console.dir(items);
+
+    return items;
+  });
+};
