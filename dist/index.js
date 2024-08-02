@@ -18,7 +18,7 @@ export default ({ filter, action }, { services }) => {
 
     if (
       context.accountability &&
-      moderatorRole.includes(context.accountability.role)
+      moderatorRole[0].includes(context.accountability.role)
     ) {
       // Only display the defined modules for non-admin & non-moderator roles
       console.dir(items);
