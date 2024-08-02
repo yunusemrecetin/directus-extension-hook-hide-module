@@ -7,8 +7,6 @@ export default ({ filter, action }, { services }) => {
       accountability: context.accountability,
     });
 
-    console.dir(context);
-
     var checkPermission =
       context.accountability && context.accountability.admin;
 
