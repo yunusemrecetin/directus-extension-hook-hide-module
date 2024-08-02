@@ -6,29 +6,14 @@ export default ({ filter, action }, { services }) => {
       schema: context.schema,
       accountability: context.accountability,
     });
-    const moderatorRole = await rolesService.getKeysByQuery({
-      filter: { name: { _eq: "Satış Noktası yöneticisi" } },
-    });
 
-    console.dir(moderatorRole);
-
-    if (context.accountability) {
-      console.dir(context.accountability.role);
-      console.dir(
-        `is match ${moderatorRole[0].includes(context.accountability.role)}`
-      );
-    }
-
-    if (
-      context.accountability &&
-      moderatorRole[0].includes(context.accountability.role)
-    ) {
+    if (context.accountability && !context.accountability.admin) {
       // Only display the defined modules for non-admin & non-moderator roles
       console.dir(items);
       var settings = items[0];
       console.dir(settings);
       settings.custom_css =
-        ".content-navigation > li:nth-child(1) { visibility: gone !important;}";
+        '.content-navigation > li:nth-child(1) { display: none !important;}';
       console.dir(items[0]);
 
       console.dir(items.length);
