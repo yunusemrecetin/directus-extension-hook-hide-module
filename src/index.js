@@ -6,15 +6,11 @@ export default ({ filter, action }, { services }) => {
       schema: context.schema,
       accountability: context.accountability,
     });
-    const moderatorRole = await rolesService.getKeysByQuery({
-      filter: { name: { _eq: "Satış Noktası yöneticisi" } },
-    });
 
     console.dir(context);
 
     var checkPermission =
-      context.accountability &&
-      moderatorRole.includes(context.accountability.role);
+      context.accountability && context.accountability.admin;
 
     console.dir(`check permission : ${checkPermission}`);
 
