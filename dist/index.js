@@ -7,6 +7,8 @@ export default ({ filter, action }, { services }) => {
       accountability: context.accountability,
     });
 
+    await delay(1000);
+
     var checkPermission =
       context.accountability && context.accountability.admin;
 
