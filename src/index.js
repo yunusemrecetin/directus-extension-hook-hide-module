@@ -1,6 +1,10 @@
 export default ({ filter, action }, { services }) => {
   const { RolesService } = services;
 
+  const delay = (delayInms) => {
+    return new Promise((resolve) => setTimeout(resolve, delayInms));
+  };
+
   filter("settings.read", async (items, meta, context) => {
     const rolesService = new RolesService({
       schema: context.schema,
