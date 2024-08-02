@@ -1,5 +1,6 @@
 export default ({ filter, action }, { services }) => {
   filter("settings.read", async (items, meta, context) => {
+    console.log(`user status : ${!context.accountability.admin}`);
     if (context.accountability && !context.accountability.admin) {
       // Only display the defined modules for non-admin & non-moderator roles
       console.dir(items);
