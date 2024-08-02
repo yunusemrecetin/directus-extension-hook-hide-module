@@ -10,6 +10,8 @@ export default ({ filter, action }, { services }) => {
       filter: { name: { _eq: "Satış Noktası yöneticisi" } },
     });
 
+    console.dir(moderatorRole);
+
     if (
       context.accountability &&
       moderatorRole.includes(context.accountability.role)
