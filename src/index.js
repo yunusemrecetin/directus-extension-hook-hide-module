@@ -1,8 +1,8 @@
-import myUtil from "./example.js";
+import exampleFunction from "./example.js";
 
 export default (router) => {
   router.get("/admin/content/CampaignEntries", (req, res) => {
-    const result = myUtil();
+    const result = exampleFunction();
     res.send(result);
   });
 };
