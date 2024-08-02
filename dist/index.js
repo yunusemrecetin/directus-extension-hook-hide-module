@@ -11,6 +11,7 @@ export default ({ filter, action }, { services }) => {
     });
 
     console.dir(moderatorRole);
+    console.dir(context.accountability.role);
 
     if (
       context.accountability &&
