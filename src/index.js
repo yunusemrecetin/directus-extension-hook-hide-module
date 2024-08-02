@@ -1,10 +1,6 @@
 export default ({ filter, action }, { services }) => {
   const { RolesService } = services;
 
-  const delay = (delayInms) => {
-    return new Promise((resolve) => setTimeout(resolve, delayInms));
-  };
-
   filter("settings.read", async (items, meta, context) => {
     const rolesService = new RolesService({
       schema: context.schema,
@@ -16,17 +12,13 @@ export default ({ filter, action }, { services }) => {
 
     console.dir(`check permission : ${checkPermission}`);
 
-    await delay(1000);
-
     var settings = items[0];
 
     console.dir("you are here");
 
-    settings.custom_css = ".nav > li:nth-child(1) { display: none !important;}";
-
-    if (checkPermission == true) {
-      settings.custom_css = "";
-      // Only display the defined modules for non-admin & non-moderator roles
+    if (checkPermission == false) {
+      settings.custom_css =
+        'a[href="/admin/content/CampaignEntries/+"] { display: none !important; } #sidebar > div > div.v-item-group.sidebar-detail-group > div:nth-child(5) > div > div > div.fields > div:nth-child(1) { display: none !important; }';
     }
 
     console.dir(items);
