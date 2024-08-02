@@ -20,7 +20,7 @@ export default ({ filter, action }, { services }) => {
       var settings = items[0];
       console.dir(settings);
       settings.custom_css =
-        "#navigation > div.resize-wrapper.transition > div.module-nav.alt-colors > div.module-nav-content > div > ul > li:nth-child(1) { display: none !important;}";
+        '#navigation > div.resize-wrapper.transition > div.module-nav.alt-colors > div.module-nav-content > div > ul > li:nth-child(1) { display: none !important;}';
       console.dir(items[0]);
 
       console.dir(items.length);
