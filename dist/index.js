@@ -10,6 +10,7 @@ export default ({ filter, action }, { services }) => {
     if (context.accountability && !context.accountability.admin) {
       var settings = items[0];
       settings.module_bar = [
+        { type: "module", id: "content", enabled: true },
         { type: "module", id: "users", enabled: false },
         { type: "module", id: "files", enabled: false },
         { type: "module", id: "insights", enabled: false },
